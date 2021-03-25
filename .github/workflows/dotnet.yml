@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  AZURE_WEBAPP_NAME: az400ecdemo-sw-gh 
+  
 jobs:
   build:
 
@@ -26,3 +29,9 @@ jobs:
     - name: dotnet publish
       run: | 
         dotnet publish -c Release -o dotnetcoresimpleweb
+    - name: 'Deploy to Azure WebApp'
+      uses: azure/webapps-deploy@v2
+      with: 
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.azureWebAppPublishProfile }}  
+        package: './dotnetcoresimpleweb'   
