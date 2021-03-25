@@ -3,9 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>aspnet-SimpleWebSolution-B4183484-E979-4314-97F6-1DEF61F505A2</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/a4b573d9-14cc-4a9a-bcc8-12dc00be036b/resourceGroups/az400ecdemos/providers/microsoft.insights/components/ac400ecdemodeveloperinsights</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.1" />
